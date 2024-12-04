@@ -1,0 +1,95 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 14px;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #e3fced;
+    background-image: radial-gradient(at 47% 33%, hsl(0.00, 0%, 100%) 0, transparent 59%),
+    radial-gradient(at 82% 65%, hsl(41.63, 62%, 85%) 0, transparent 55%);
+    background-repeat: no-repeat;
+}
+:root {
+  /* Primary Blue */
+  --primary-blue: #1B4D89;  /* A deep, professional navy blue */
+
+  /* Color Variations */
+  --primary-light: #2565B5;  /* Lighter shade for hover states */
+  --primary-dark: #123661;   /* Darker shade for active states */
+
+  /* Supporting Colors */
+  --blue-100: #EBF2FA;  /* Very light blue for backgrounds */
+  --blue-200: #D7E5F5;  /* Light blue for secondary backgrounds */
+  --blue-300: #A3C6E8;  /* Medium light blue for borders */
+  --blue-400: #6FA1D8;  /* Medium blue for secondary elements */
+  --blue-500: #1B4D89;  /* Primary blue */
+  --blue-600: #164177;  /* Slightly darker for emphasis */
+  --blue-700: #123561;  /* Dark blue for text */
+  --blue-800: #0D284A;  /* Very dark blue for contrast */
+
+  /* Accessibility */
+  --blue-contrast: #FFFFFF;  /* White text for blue backgrounds */
+  --blue-focus: #4D90E8;    /* Focus state color */
+
+  /* Opacity Variants */
+  --blue-alpha-10: rgba(27, 77, 137, 0.1);
+  --blue-alpha-20: rgba(27, 77, 137, 0.2);
+  --blue-alpha-50: rgba(27, 77, 137, 0.5);
+}
+
+/* Example Usage */
+.button-primary {
+  background-color: var(--primary-blue);
+  color: var(--blue-contrast);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-light);
+}
+
+.button-primary:active {
+  background-color: var(--primary-dark);
+}
+
+.card {
+  background-color: var(--blue-100);
+  border: 1px solid var(--blue-300);
+  box-shadow: 0 2px 4px var(--blue-alpha-10);
+}
+
+.header {
+  background-color: var(--blue-800);
+  color: var(--blue-contrast);
+}
+
+.text-primary {
+  color: var(--blue-700);
+}
+
+.link {
+  color: var(--blue-500);
+  text-decoration: none;
+}
+
+.link:hover {
+  color: var(--blue-600);
+  text-decoration: underline;
+}
+
+.input:focus {
+  border-color: var(--blue-focus);
+  box-shadow: 0 0 0 3px var(--blue-alpha-20);
+}
