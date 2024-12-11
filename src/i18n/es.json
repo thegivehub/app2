@@ -1,0 +1,43 @@
+{
+  "data": {
+    "id": "es",
+    "pages": {
+      "createCampaign": {
+        "createCampaignTitle": "Crea tu campaña",
+        "getStarted": "Comenzar",
+        "setDetailsTitle": "Establece los detalles esenciales de la recaudación de fondos como el título, el objetivo y la moneda",
+        "campaignStoryTitle": "Historia de la campaña",
+        "tellStoryDescription": "¡Cuenta tu historia! Agrega tu descripción, imágenes, videos y más",
+        "finalDetailsTitle": "Detalles finales",
+        "editDetailsDescription": "Agrega miembros del equipo, personaliza la visibilidad y más",
+        "paymentMethodsTitle": "Métodos de pago",
+        "getFullAccess": "Obtén acceso completo",
+        "campaignInformationTitle": "Información de la campaña",
+        "titleLabel": "Título",
+        "categoryLabel": "Categoría",
+        "campaignLocationTitle": "Ubicación de la campaña",
+        "campaignLocationDescription": "Selecciona el país al que enviaremos los fondos (generalmente donde resides). Esto ayuda a emparejarte con los procesadores de pago correctos.",
+        "countryLabel": "País",
+        "cityLabel": "Ciudad",
+        "donationInformationTitle": "Información de donación",
+        "currencyQuestion": "¿En qué moneda quieres recaudar fondos?",
+        "fundraiserTypeQuestion": "¿Qué tipo de recaudación de fondos te gustaría crear?",
+        "endDateOptionTitle": "¿Recaudación de fondos con una fecha de finalización específica?",
+        "ongoingOptionTitle": "¿Recaudación de fondos continua (sin fecha límite)?",
+        "specificEndDateTitle": "¿Recaudación de fondos con una fecha de finalización específica?",
+        "deadlineDescription": "Esto crea urgencia y siempre debe usarse cuando se necesita dinero antes de una fecha determinada.",
+        "deadlineLabel": "Fecha límite",
+        "targetAmountLabel": "Monto objetivo",
+        "overfundingQuestion": "¿Permitir que tu recaudación de fondos sea financiada por encima del monto necesario?",
+        "donationTypeTitle": "Tipo de donación",
+        "fixedAmountOption": "Monto(s) fijo(s)",
+        "multiLanguageQuestion": "¿Quieres que tu página de recaudación de fondos se muestre en más de un idioma?",
+        "fundAndRegistrationDetailsTitle": "Detalles de fondos y registro",
+        "receiverNameDescription": "Nombre de la persona que recibe los fondos. Para organizaciones, el nombre del representante legal (esto puede modificarse después).",
+        "firstNameLabel": "Nombre",
+        "lastNameLabel": "Apellido",
+        "termsAgreement": "Acepto los términos y condiciones y la política de privacidad de The Give Hub"
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "data": {
+    "id": "fr",
+    "pages": {
+      "createCampaign": {
+        "createCampaignTitle": "Créez votre campagne",
+        "getStarted": "Commencez",
+        "setDetailsTitle": "Définissez les détails essentiels de la collecte de fonds comme le titre, l'objectif et la devise",
+        "campaignStoryTitle": "Histoire de la campagne",
+        "tellStoryDescription": "Racontez votre histoire ! Ajoutez votre description, des images, des vidéos et plus encore",
+        "finalDetailsTitle": "Détails finaux",
+        "editDetailsDescription": "Ajoutez des membres d'équipe, personnalisez la visibilité, et plus encore",
+        "paymentMethodsTitle": "Modes de paiement",
+        "getFullAccess": "Obtenez un accès complet",
+        "campaignInformationTitle": "Informations sur la campagne",
+        "titleLabel": "Titre",
+        "categoryLabel": "Catégorie",
+        "campaignLocationTitle": "Emplacement de la campagne",
+        "campaignLocationDescription": "Veuillez sélectionner le pays où nous enverrons les fonds (généralement là où vous résidez). Cela permet de vous associer aux bons processeurs de paiement.",
+        "countryLabel": "Pays",
+        "cityLabel": "Ville",
+        "donationInformationTitle": "Informations sur les dons",
+        "currencyQuestion": "Dans quelle devise souhaitez-vous collecter des fonds ?",
+        "fundraiserTypeQuestion": "Quel type de collecte de fonds souhaitez-vous créer ?",
+        "endDateOptionTitle": "Collecte de fonds avec une date de fin spécifique ?",
+        "ongoingOptionTitle": "Collecte de fonds en cours (sans date limite) ?",
+        "specificEndDateTitle": "Collecte de fonds avec une date de fin spécifique ?",
+        "deadlineDescription": "Cela crée une urgence et devrait toujours être utilisé lorsque l'argent est nécessaire avant une date précise.",
+        "deadlineLabel": "Date limite",
+        "targetAmountLabel": "Montant cible",
+        "overfundingQuestion": "Autoriser le financement de votre collecte au-delà du montant nécessaire ?",
+        "donationTypeTitle": "Type de don",
+        "fixedAmountOption": "Montant(s) fixe(s)",
+        "multiLanguageQuestion": "Voulez-vous que votre page de collecte de fonds soit affichée dans plusieurs langues ?",
+        "fundAndRegistrationDetailsTitle": "Détails de financement et d'enregistrement",
+        "receiverNameDescription": "Nom de la personne recevant les fonds. Pour les organisations, le nom du représentant légal (peut être modifié ultérieurement).",
+        "firstNameLabel": "Prénom",
+        "lastNameLabel": "Nom de famille",
+        "termsAgreement": "J'accepte les conditions générales et la politique de confidentialité de The Give Hub"
+      }
+    }
+  }
+}
