@@ -33,6 +33,7 @@
         "deadlineDescription": "This creates urgency and should always be used when money is needed before a certain time.",
         "deadlineLabel": "deadline",
         "deadlinePlaceholder": "Date input",
+        "targetAmountQuestion": "What is your target amount?",
         "targetAmountLabel": "Target amount",
         "overfundingQuestion": "Allow your fundraiser to be funded over the needed amount?",
         "ongoingOptionDescription": "This should be used if you are collecting money on a regular basis.",
