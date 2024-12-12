@@ -64,12 +64,6 @@ import {
   FileDropzone,
 } from '../components';
 
-const languages = ['en', 'es', 'fr', 'de', 'pt'];
-
-import { data } from '../i18n/de.json';
-
-const PageData = data.pages.createCampaign;
-
 interface ISocialProps {
   icon: React.FC<any>;
   title: React.ReactNode;
@@ -87,6 +81,13 @@ const SocialSelectItem = forwardRef<HTMLDivElement, ISocialProps>(
     </div>
   )
 );
+
+// Languages will need to be further handled. This is just a placeholder.
+const languages = ['en', 'es', 'fr', 'de', 'pt'];
+
+import { data } from '../i18n/es.json';
+
+const pageData = data.pages.createCampaign;
 
 const CreateCampaignPage = () => {
   const theme = useMantineTheme();
@@ -167,102 +168,102 @@ const CreateCampaignPage = () => {
   return (
     <>
       <Helmet>
-        <title>{PageData.createCampaignTitle}</title>
+        <title>{pageData.createCampaignTitle}</title>
       </Helmet>
       <Box>
         <Container my={36}>
           <Title mb="xl" align="center">
-            {PageData.createCampaignTitle}
+            {pageData.createCampaignTitle}
           </Title>
           <Stepper active={active} onStepClick={setActive} breakpoint="sm">
             <Stepper.Step
-              label={PageData.getStarted}
-              description={PageData.setDetailsTitle}>
-              <Title {...titleProps}>{PageData.campaignInformationTitle}</Title>
+              label={pageData.getStarted}
+              description={pageData.setDetailsTitle}>
+              <Title {...titleProps}>{pageData.campaignInformationTitle}</Title>
               <Paper {...paperProps}>
                 <SimpleGrid
                   cols={2}
                   breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                   <TextInput
-                    label={PageData.campaignTitle}
+                    label={pageData.campaignTitle}
                     required
-                    placeholder={PageData.campaignTitlePlaceholder}
+                    placeholder={pageData.campaignTitlePlaceholder}
                   />
                   <CategorySelect />
                 </SimpleGrid>
               </Paper>
               <Paper {...paperProps}>
                 <Title {...subTitleProps}>
-                  {PageData.campaignLocationTitle}
+                  {pageData.campaignLocationTitle}
                 </Title>
                 <Text size="sm" mb="sm">
-                  {PageData.campaignLocationDescription}
+                  {pageData.campaignLocationDescription}
                 </Text>
                 <SimpleGrid
                   cols={2}
                   breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
                   <CountrySelect />
                   <TextInput
-                    label={PageData.cityLabel}
-                    placeholder={PageData.cityPlaceholder}
+                    label={pageData.cityLabel}
+                    placeholder={pageData.cityPlaceholder}
                   />
                 </SimpleGrid>
               </Paper>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
                   <Title {...subTitleProps}>
-                    {PageData.donationInformationTitle}
+                    {pageData.donationInformationTitle}
                   </Title>
                   <CurrencySelect />
                   <Radio.Group
-                    label={PageData.fundraiserTypeQuestion}
+                    label={pageData.fundraiserTypeQuestion}
                     value={target}
                     onChange={setTarget}>
                     <Group mt="xs">
                       <Radio
-                        value={PageData.deadline}
-                        label={PageData.endDateOptionTitle}
+                        value={pageData.deadline}
+                        label={pageData.endDateOptionTitle}
                       />
                       <Radio
                         value="no-deadline"
-                        label={PageData.ongoingOptionTitle}
+                        label={pageData.ongoingOptionTitle}
                       />
                     </Group>
                   </Radio.Group>
                   <Paper {...paperProps}>
-                    {target === PageData.deadline ? (
+                    {target === pageData.deadline ? (
                       <Stack spacing="xs">
-                        <Text size="sm">{PageData.specificEndDateTitle}</Text>
-                        <Text size="sm">{PageData.deadlineDescription}</Text>
+                        <Text size="sm">{pageData.specificEndDateTitle}</Text>
+                        <Text size="sm">{pageData.deadlineDescription}</Text>
                         <DateInput
                           value={deadlineDate}
                           onChange={setDeadlineDate}
-                          label={PageData.deadlineLabel}
-                          placeholder={PageData.deadlinePlaceholder}
+                          label={pageData.deadlineLabel}
+                          placeholder={pageData.deadlinePlaceholder}
                           required
                           icon={<IconCalendar size={18} />}
                         />
                         <NumberInput
-                          label={PageData.targetAmountLabel}
+                          label={pageData.targetAmountLabel}
                           icon={<IconCurrencyDollar size={18} />}
                         />
-                        <Checkbox label={PageData.overfundingQuestion} />
+                        <Checkbox label={pageData.overfundingQuestion} />
                       </Stack>
                     ) : (
                       <Stack spacing="xs">
-                        <Text size="sm">{PageData.ongoingOptionTitle}</Text>
+                        <Text size="sm">{pageData.ongoingOptionTitle}</Text>
                         <Text size="sm"></Text>
                         <Checkbox
                           checked={minimumCheck}
                           onChange={(event) =>
                             setMinimumCheck(event.currentTarget.checked)
                           }
-                          label={PageData.fixedAmountDescription}
+                          label={pageData.fixedAmountDescription}
                         />
                         {minimumCheck && (
                           <NumberInput
                             required
-                            label={PageData.targetAmountLabel}
+                            label={pageData.targetAmountLabel}
                             icon={<IconCurrencyDollar size={18} />}
                           />
                         )}
@@ -272,56 +273,56 @@ const CreateCampaignPage = () => {
                 </Stack>
               </Paper>
               <Paper {...paperProps}>
-                <Title {...subTitleProps}>{PageData.donationTypeTitle}</Title>
+                <Title {...subTitleProps}>{pageData.donationTypeTitle}</Title>
                 <SegmentedControl
                   size="md"
                   value={donationType}
                   onChange={setDonationType}
                   data={[
                     {
-                      label: `${PageData.dataLabelAny}`,
-                      value: `${PageData.dataValueAny}`,
+                      label: `${pageData.dataLabelAny}`,
+                      value: `${pageData.dataValueAny}`,
                     },
                     {
-                      label: `${PageData.dataLabelMinimum}`,
-                      value: `${PageData.dataValueMinimum}`,
+                      label: `${pageData.dataLabelMinimum}`,
+                      value: `${pageData.dataValueMinimum}`,
                     },
                     {
-                      label: `${PageData.dataLabelFixed}`,
-                      value: `${PageData.dataValueFixed}`,
+                      label: `${pageData.dataLabelFixed}`,
+                      value: `${pageData.dataValueFixed}`,
                     },
                   ]}
                   mb="sm"
                 />
-                {donationType === PageData.dataValueMinimum ? (
-                  <NumberInput label={PageData.minimumAmountLabel} />
+                {donationType === pageData.dataValueMinimum ? (
+                  <NumberInput label={pageData.minimumAmountLabel} />
                 ) : (
-                  <NumberInput label={PageData.maximumAmountLabel} />
+                  <NumberInput label={pageData.maximumAmountLabel} />
                 )}
-                <Checkbox label={PageData.multiLanguageQuestion} mt="sm" />
+                <Checkbox label={pageData.multiLanguageQuestion} mt="sm" />
               </Paper>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
                   <Title {...subTitleProps}>
-                    {PageData.fundAndRegistrationDetailsTitle}
+                    {pageData.fundAndRegistrationDetailsTitle}
                   </Title>
-                  <Text size="sm">*{PageData.receiverNameDescription}</Text>
+                  <Text size="sm">*{pageData.receiverNameDescription}</Text>
                   <SimpleGrid
                     cols={2}
                     breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                    <TextInput label={PageData.firstNameLabel} />
-                    <TextInput label={PageData.lastNameLabel} />
+                    <TextInput label={pageData.firstNameLabel} />
+                    <TextInput label={pageData.lastNameLabel} />
                   </SimpleGrid>
                   <FileDropzone
-                    label={PageData.profilePictureLabel}
-                    description={PageData.profilePictureDescription}
+                    label={pageData.profilePictureLabel}
+                    description={pageData.profilePictureDescription}
                   />
                   <Checkbox
                     label={
                       <>
-                        {PageData.termsAgreement1}{' '}
+                        {pageData.termsAgreement1}{' '}
                         <Anchor href="#" target="_blank">
-                          {PageData.termsAgreement2}
+                          {pageData.termsAgreement2}
                         </Anchor>
                       </>
                     }
@@ -330,12 +331,12 @@ const CreateCampaignPage = () => {
               </Paper>
             </Stepper.Step>
             <Stepper.Step
-              label={PageData.campaignStoryTitle}
-              description={PageData.yourCampaignStoryDescription}>
-              <Title {...titleProps}>{PageData.yourCampaignStory}</Title>
+              label={pageData.campaignStoryTitle}
+              description={pageData.yourCampaignStoryDescription}>
+              <Title {...titleProps}>{pageData.yourCampaignStory}</Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
-                  <Text size="sm">{PageData.yourCampaignStoryPlaceholder}</Text>
+                  <Text size="sm">{pageData.yourCampaignStoryPlaceholder}</Text>
                   <RichTextEditor editor={editor}>
                     <RichTextEditor.Toolbar sticky stickyOffset={60}>
                       <RichTextEditor.ControlsGroup>
@@ -380,45 +381,45 @@ const CreateCampaignPage = () => {
                     <RichTextEditor.Content />
                   </RichTextEditor>
                   <FileDropzone
-                    label={PageData.fileDropZoneLabel}
-                    description={PageData.fileDropZoneDescription}
+                    label={pageData.fileDropZoneLabel}
+                    description={pageData.fileDropZoneDescription}
                   />
                   <TextInput
-                    label={PageData.videoUrlLabel}
-                    description={PageData.videoUrlDescription}
+                    label={pageData.videoUrlLabel}
+                    description={pageData.videoUrlDescription}
                     icon={<IconLink size={18} />}
                   />
                 </Stack>
               </Paper>
             </Stepper.Step>
             <Stepper.Step
-              label={PageData.finalDetailsTitle}
-              description={PageData.editDetailsDescription}>
-              <Title {...titleProps}>{PageData.finalDetailsTitle}</Title>
+              label={pageData.finalDetailsTitle}
+              description={pageData.editDetailsDescription}>
+              <Title {...titleProps}>{pageData.finalDetailsTitle}</Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
-                  <Title {...subTitleProps}>{PageData.manageTeam}</Title>
+                  <Title {...subTitleProps}>{pageData.manageTeam}</Title>
                   <Text size="sm">
-                    {PageData.teamMembersInviteDescription1}
+                    {pageData.teamMembersInviteDescription1}
                   </Text>
                   <Text size="sm">
-                    {PageData.teamMembersInviteDescription2}
+                    {pageData.teamMembersInviteDescription2}
                   </Text>
                   <Alert
                     color="orange"
                     variant="light"
                     icon={<IconInfoCircleFilled size={18} />}>
-                    {PageData.teamMembersInviteAlert}
+                    {pageData.teamMembersInviteAlert}
                   </Alert>
                   <SimpleGrid
                     cols={2}
                     breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                    <TextInput label={PageData.firstNameLabel} />
-                    <TextInput label={PageData.lastNameLabel} />
-                    <TextInput label={PageData.emailLabel} mb="xs" />
+                    <TextInput label={pageData.firstNameLabel} />
+                    <TextInput label={pageData.lastNameLabel} />
+                    <TextInput label={pageData.emailLabel} mb="xs" />
                     <TextInput
-                      label={PageData.roleLabel}
-                      placeholder={PageData.rolePlaceholder}
+                      label={pageData.roleLabel}
+                      placeholder={pageData.rolePlaceholder}
                       mb="xs"
                     />
                   </SimpleGrid>
@@ -426,28 +427,28 @@ const CreateCampaignPage = () => {
                     leftIcon={<IconMail size={18} />}
                     mx="auto"
                     variant="light">
-                    {PageData.sendInviteEmail}
+                    {pageData.sendInviteEmail}
                   </Button>
                 </Stack>
               </Paper>
               <Paper {...paperProps}>
-                <Title {...subTitleProps}>{PageData.visibility}</Title>
+                <Title {...subTitleProps}>{pageData.visibility}</Title>
                 <Stack spacing="sm">
-                  <Checkbox label={PageData.visibilityCheckBox1} />
-                  <Checkbox label={PageData.visibilityCheckBox2} />
-                  <Checkbox label={PageData.visibilityCheckBox3} />
-                  <Checkbox label={PageData.visibilityCheckBox4} />
+                  <Checkbox label={pageData.visibilityCheckBox1} />
+                  <Checkbox label={pageData.visibilityCheckBox2} />
+                  <Checkbox label={pageData.visibilityCheckBox3} />
+                  <Checkbox label={pageData.visibilityCheckBox4} />
                 </Stack>
               </Paper>
               <Paper {...paperProps}>
-                <Title {...subTitleProps}>{PageData.socialMediaLinks}</Title>
-                <Text size="sm">{PageData.socialMediaDescription}</Text>
+                <Title {...subTitleProps}>{pageData.socialMediaLinks}</Title>
+                <Text size="sm">{pageData.socialMediaDescription}</Text>
                 <Box>
                   {socialFields.length > 0 ? (
                     <Flex mb="xs"></Flex>
                   ) : (
                     <Text color="dimmed" align="center" my="md">
-                      {PageData.addSocialMediaLink}
+                      {pageData.addSocialMediaLink}
                     </Text>
                   )}
 
@@ -464,7 +465,7 @@ const CreateCampaignPage = () => {
                         })
                       }
                       variant="light">
-                      {PageData.addNewSocialLink}
+                      {pageData.addNewSocialLink}
                     </Button>
                   </Group>
                 </Box>
@@ -482,33 +483,33 @@ const CreateCampaignPage = () => {
               </Paper>
             </Stepper.Step>
             <Stepper.Step
-              label={PageData.paymentMethodsTitle}
-              description={PageData.getFullAccess}>
+              label={pageData.paymentMethodsTitle}
+              description={pageData.getFullAccess}>
               <Title {...titleProps}></Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
                   <Title {...subTitleProps}>
-                    {PageData.enablePaymentProcessors}
+                    {pageData.enablePaymentProcessors}
                   </Title>
                   <Alert icon={<IconCurrency size={18} />} color="blue">
-                    {PageData.enablePaymentProcessorsDescription}
+                    {pageData.enablePaymentProcessorsDescription}
                   </Alert>
-                  <Text size="sm">{PageData.availablePaymentMethods}</Text>
+                  <Text size="sm">{pageData.availablePaymentMethods}</Text>
                   <Group>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandPaypal size={18} />}>
-                      {PageData.connectWithPayPal}
+                      {pageData.connectWithPayPal}
                     </Button>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandGoogle size={18} />}>
-                      {PageData.connectWithGooglePay}
+                      {pageData.connectWithGooglePay}
                     </Button>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandApple size={18} />}>
-                      {PageData.connectWithApplePay}
+                      {pageData.connectWithApplePay}
                     </Button>
                   </Group>
                 </Stack>
@@ -516,7 +517,7 @@ const CreateCampaignPage = () => {
             </Stepper.Step>
             <Stepper.Completed>
               <Title {...titleProps} align="center" my="xl">
-                {PageData.completedSteps}
+                {pageData.completedSteps}
               </Title>
             </Stepper.Completed>
           </Stepper>
@@ -526,20 +527,20 @@ const CreateCampaignPage = () => {
               variant="default"
               onClick={prevStep}
               leftIcon={<IconChevronLeft size={18} />}>
-              {PageData.navigateBack}
+              {pageData.navigateBack}
             </Button>
             {active < 4 ? (
               <Button
                 onClick={nextStep}
                 leftIcon={<IconChevronRight size={18} />}>
-                {PageData.navigateNext}
+                {pageData.navigateNext}
               </Button>
             ) : (
               <Button
                 component="a"
                 href="/dashboard"
                 leftIcon={<IconCheck size={18} />}>
-                {PageData.navigateLaunch}
+                {pageData.navigateLaunch}
               </Button>
             )}
           </Group>
