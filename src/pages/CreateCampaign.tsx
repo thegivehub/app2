@@ -64,7 +64,9 @@ import {
   FileDropzone,
 } from '../components';
 
-import { data } from '../i18n/en.json';
+const languages = ['en', 'es', 'fr', 'de', 'pt'];
+
+import { data } from '../i18n/de.json';
 
 const PageData = data.pages.createCampaign;
 
@@ -218,7 +220,7 @@ const CreateCampaignPage = () => {
                     onChange={setTarget}>
                     <Group mt="xs">
                       <Radio
-                        value={PageData.deadlineLabel}
+                        value={PageData.deadline}
                         label={PageData.endDateOptionTitle}
                       />
                       <Radio
@@ -228,7 +230,7 @@ const CreateCampaignPage = () => {
                     </Group>
                   </Radio.Group>
                   <Paper {...paperProps}>
-                    {target === PageData.deadlineLabel ? (
+                    {target === PageData.deadline ? (
                       <Stack spacing="xs">
                         <Text size="sm">{PageData.specificEndDateTitle}</Text>
                         <Text size="sm">{PageData.deadlineDescription}</Text>
@@ -276,13 +278,22 @@ const CreateCampaignPage = () => {
                   value={donationType}
                   onChange={setDonationType}
                   data={[
-                    { label: 'Any (popular option)', value: 'any' },
-                    { label: 'Minimum', value: 'minimum' },
-                    { label: 'Fixed', value: 'fixed' },
+                    {
+                      label: `${PageData.dataLabelAny}`,
+                      value: `${PageData.dataValueAny}`,
+                    },
+                    {
+                      label: `${PageData.dataLabelMinimum}`,
+                      value: `${PageData.dataValueMinimum}`,
+                    },
+                    {
+                      label: `${PageData.dataLabelFixed}`,
+                      value: `${PageData.dataValueFixed}`,
+                    },
                   ]}
                   mb="sm"
                 />
-                {donationType === 'minimum' ? (
+                {donationType === PageData.dataValueMinimum ? (
                   <NumberInput label={PageData.minimumAmountLabel} />
                 ) : (
                   <NumberInput label={PageData.maximumAmountLabel} />
@@ -319,15 +330,12 @@ const CreateCampaignPage = () => {
               </Paper>
             </Stepper.Step>
             <Stepper.Step
-              label="Campaign story"
-              description="Tell your story! Add your description, images, videos and more">
-              <Title {...titleProps}>Your campaign story</Title>
+              label={PageData.campaignStoryTitle}
+              description={PageData.yourCampaignStoryDescription}>
+              <Title {...titleProps}>{PageData.yourCampaignStory}</Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
-                  <Text size="sm">
-                    Explain why you&apos;re raising money, what the funds will
-                    be used for, and how much you value the support
-                  </Text>
+                  <Text size="sm">{PageData.yourCampaignStoryPlaceholder}</Text>
                   <RichTextEditor editor={editor}>
                     <RichTextEditor.Toolbar sticky stickyOffset={60}>
                       <RichTextEditor.ControlsGroup>
@@ -372,50 +380,45 @@ const CreateCampaignPage = () => {
                     <RichTextEditor.Content />
                   </RichTextEditor>
                   <FileDropzone
-                    label="Upload fundraiser photos"
-                    description="You can select and upload several in one go"
+                    label={PageData.fileDropZoneLabel}
+                    description={PageData.fileDropZoneDescription}
                   />
                   <TextInput
-                    label="Video URL"
-                    description="The inclusion of a personalized video can help your fundraiser raise more money. We support links from YouTube and Vimeo. Simply copy paste your video link into the field below."
+                    label={PageData.videoUrlLabel}
+                    description={PageData.videoUrlDescription}
                     icon={<IconLink size={18} />}
                   />
                 </Stack>
               </Paper>
             </Stepper.Step>
             <Stepper.Step
-              label="Final details"
-              description="Add team members, customize visibility, and more">
-              <Title {...titleProps}>Final details</Title>
+              label={PageData.finalDetailsTitle}
+              description={PageData.editDetailsDescription}>
+              <Title {...titleProps}>{PageData.finalDetailsTitle}</Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
-                  <Title {...subTitleProps}>Manage Team</Title>
+                  <Title {...subTitleProps}>{PageData.manageTeam}</Title>
                   <Text size="sm">
-                    If there&apos;s more than one person that's responsible for
-                    this fundraiser and you'd like them to get public credit and
-                    help manage this page, invite them via email.
+                    {PageData.teamMembersInviteDescription1}
                   </Text>
                   <Text size="sm">
-                    Team members will be shown on your page along with their
-                    role. Please remember, team members can change all elements
-                    of the page.
+                    {PageData.teamMembersInviteDescription2}
                   </Text>
                   <Alert
                     color="orange"
                     variant="light"
                     icon={<IconInfoCircleFilled size={18} />}>
-                    You haven't invited anyone to help manage this fundraiser
-                    yet.
+                    {PageData.teamMembersInviteAlert}
                   </Alert>
                   <SimpleGrid
                     cols={2}
                     breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-                    <TextInput label="First name" />
-                    <TextInput label="Last name" />
-                    <TextInput label="Email" mb="xs" />
+                    <TextInput label={PageData.firstNameLabel} />
+                    <TextInput label={PageData.lastNameLabel} />
+                    <TextInput label={PageData.emailLabel} mb="xs" />
                     <TextInput
-                      label="Role"
-                      placeholder="e.g. Social media manager, funds manager"
+                      label={PageData.roleLabel}
+                      placeholder={PageData.rolePlaceholder}
                       mb="xs"
                     />
                   </SimpleGrid>
@@ -423,31 +426,28 @@ const CreateCampaignPage = () => {
                     leftIcon={<IconMail size={18} />}
                     mx="auto"
                     variant="light">
-                    Send invite via email
+                    {PageData.sendInviteEmail}
                   </Button>
                 </Stack>
               </Paper>
               <Paper {...paperProps}>
-                <Title {...subTitleProps}>Visibility</Title>
+                <Title {...subTitleProps}>{PageData.visibility}</Title>
                 <Stack spacing="sm">
-                  <Checkbox label="Allow your fundraiser to be shown under user created groups." />
-                  <Checkbox label="Check this box if you would like to hide your campaign on our site. Only those that you send the URL to will be able to find it and donate." />
-                  <Checkbox label="Check if you would like to stop search engines such as Google indexing this page." />
-                  <Checkbox label="Check if you would like to add a password to your fundraising page. Only those with the password will be able to view and donate to the campaign." />
+                  <Checkbox label={PageData.visibilityCheckBox1} />
+                  <Checkbox label={PageData.visibilityCheckBox2} />
+                  <Checkbox label={PageData.visibilityCheckBox3} />
+                  <Checkbox label={PageData.visibilityCheckBox4} />
                 </Stack>
               </Paper>
               <Paper {...paperProps}>
-                <Title {...subTitleProps}>Social media links</Title>
-                <Text size="sm">
-                  Is this fundraiser shown in other places? If so, add links to
-                  those pages.
-                </Text>
+                <Title {...subTitleProps}>{PageData.socialMediaLinks}</Title>
+                <Text size="sm">{PageData.socialMediaDescription}</Text>
                 <Box>
                   {socialFields.length > 0 ? (
                     <Flex mb="xs"></Flex>
                   ) : (
                     <Text color="dimmed" align="center" my="md">
-                      Add social media link
+                      {PageData.addSocialMediaLink}
                     </Text>
                   )}
 
@@ -464,7 +464,7 @@ const CreateCampaignPage = () => {
                         })
                       }
                       variant="light">
-                      Add new social link
+                      {PageData.addNewSocialLink}
                     </Button>
                   </Group>
                 </Box>
@@ -481,33 +481,34 @@ const CreateCampaignPage = () => {
                 />
               </Paper>
             </Stepper.Step>
-            <Stepper.Step label="Payment methods" description="Get full access">
-              <Title {...titleProps}>Fundraiser Payment Methods</Title>
+            <Stepper.Step
+              label={PageData.paymentMethodsTitle}
+              description={PageData.getFullAccess}>
+              <Title {...titleProps}></Title>
               <Paper {...paperProps}>
                 <Stack spacing="sm">
                   <Title {...subTitleProps}>
-                    Enable payment processors for your fundraising page
+                    {PageData.enablePaymentProcessors}
                   </Title>
                   <Alert icon={<IconCurrency size={18} />} color="blue">
-                    You can enable GGF Card Payments (powered by MangoPay) if
-                    you switch your currency from GBP to USD{' '}
+                    {PageData.enablePaymentProcessorsDescription}
                   </Alert>
-                  <Text size="sm">Available payment methods</Text>
+                  <Text size="sm">{PageData.availablePaymentMethods}</Text>
                   <Group>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandPaypal size={18} />}>
-                      Connect with Paypal
+                      {PageData.connectWithPayPal}
                     </Button>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandGoogle size={18} />}>
-                      Connect with Google Pay
+                      {PageData.connectWithGooglePay}
                     </Button>
                     <Button
                       variant="light"
                       leftIcon={<IconBrandApple size={18} />}>
-                      Connect with Apple Pay
+                      {PageData.connectWithApplePay}
                     </Button>
                   </Group>
                 </Stack>
@@ -515,7 +516,7 @@ const CreateCampaignPage = () => {
             </Stepper.Step>
             <Stepper.Completed>
               <Title {...titleProps} align="center" my="xl">
-                Completed, take a seat while we finish setting up things for you
+                {PageData.completedSteps}
               </Title>
             </Stepper.Completed>
           </Stepper>
@@ -525,20 +526,20 @@ const CreateCampaignPage = () => {
               variant="default"
               onClick={prevStep}
               leftIcon={<IconChevronLeft size={18} />}>
-              Back
+              {PageData.navigateBack}
             </Button>
             {active < 4 ? (
               <Button
                 onClick={nextStep}
                 leftIcon={<IconChevronRight size={18} />}>
-                Next step
+                {PageData.navigateNext}
               </Button>
             ) : (
               <Button
                 component="a"
                 href="/dashboard"
                 leftIcon={<IconCheck size={18} />}>
-                Launch campaign
+                {PageData.navigateLaunch}
               </Button>
             )}
           </Group>
