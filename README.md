@@ -1,8 +1,8 @@
-![image](https://github.com/design-sparx/crowdup/assets/26582923/001cd476-c753-4087-96a6-ee8c99fc3612)
+![image](https://github.com/thegivehub/app2/blob/main/public/assets/the-give-hub.jpg)
 
 # Crowdfunding website project
 
-[The Give Hub App](https://app.thegivehub.com/ "The Give Hub")
+[The Give Hub App](https://app.thegivehub.com/ 'The Give Hub')
 
 ### About:
 
@@ -26,7 +26,7 @@ The Give Hub is a crowdfunding platform that helps you get funding for your pers
 
 **Dev dependencies**
 
-- eslint v8 - https://eslint.org/docs/latest/user-guide/getting-started- 
+- eslint v8 - https://eslint.org/docs/latest/user-guide/getting-started-
 - vite v4 - https://vitejs.dev/
 
 ### Software
@@ -40,8 +40,8 @@ Before proceeding, please ensure you have the following software installed on yo
 ### Useful links
 
 - Download Git cli -
-    - Windows: https://git-scm.com/download/windows
-    - Mac: https://git-scm.com/download/mac
+  - Windows: https://git-scm.com/download/windows
+  - Mac: https://git-scm.com/download/mac
 - Download Node - https://nodejs.org/en/
 - Download Yarn cli - https://yarnpkg.com/lang/en/docs/install/
 - Download VSCode - https://code.visualstudio.com/
